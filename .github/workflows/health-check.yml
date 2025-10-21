@@ -2,12 +2,11 @@ name: Health Check
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  
+    schedule:
+      - cron: "15, *, *, *, *"
+
 jobs:
-  health_check_ing:
+  health_check_ping:
     runs-on: ubuntu-latest
     steps:
       - name: Check the deployed service URL
